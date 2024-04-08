@@ -2,9 +2,9 @@
   "name": "node-express-vanillajs",
   "version": "1.0.0",
   "description": "This Vanilla JS Pokedex aims to provide a seamless user experience with its intuitive interface, search functionality, and AI-generated fun facts. The project adheres to established coding standards and fulfills all specified requirements.",
-  "main": "server.mjs",
+  "main": "src/server.mjs",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node src/server.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
