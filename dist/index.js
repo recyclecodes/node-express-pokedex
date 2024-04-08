@@ -1,7 +1,5 @@
 import express from 'express';
 import fetch from 'node-fetch';
-import dotenv from 'dotenv';
-dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
@@ -12,11 +10,12 @@ app.post('/api/pokemon/trivia', async (req, res) => {
       pokemonName
     } = req.body;
     const apiKey = process.env.OPENAI_API_KEY;
+    console.log(apiKey);
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
+        Authorization: `Bearer ${apiKey}`
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo',
